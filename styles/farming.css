@@ -282,5 +282,26 @@ label.error {
   visibility: hidden; }
 
 /*===登录===*/
+.weui-pwd-btn {
+  display: inline-block;
+  height: 45px;
+  margin-left: 5px;
+  padding: 0 0.6em 0 0.7em;
+  border-left: 1px solid #E5E5E5;
+  line-height: 45px;
+  vertical-align: middle;
+  font-size: 24px;
+  font-weight: 500;
+  color: #3CC51F; }
+
+button.weui-pwd-btn {
+  background-color: transparent;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  outline: 0; }
+
+.weui-pwd-btn:active {
+  color: #52a341; }
 
 /*# sourceMappingURL=farming.css.map */
