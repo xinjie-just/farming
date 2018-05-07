@@ -78,6 +78,7 @@ html {
 
 body {
   @extend %page-width;
+  height: 100%;
   font-size: .12rem;
   color: $text-color;
   background-color: #fff;
