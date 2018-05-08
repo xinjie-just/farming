@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>咨询查询</title>
+    <meta name="author" content="lixinjie">
+    <meta name="keywords" content="农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <meta name="description" content="温江农业局项目,微博动态,农业VR,农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <link rel="stylesheet" href="../../styles/iconfont.css">
+    <link rel="stylesheet" href="../../styles/weui.min.css">
+    <link rel="stylesheet" href="../../styles/jquery-weui.min.css">
+    <link rel="stylesheet" href="../../styles/farming.css">
+</head>
+<body>
+    <div class="weui-cells weui-cells_form">
+        <!--作物品种选择-->
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label for="variety" class="weui-label">作物品种选择</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="variety" class="weui-input" type="text" value="" readonly="" data-values="">
+            </div>
+        </div>
+        <!--问题类型选择-->
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label for="type" class="weui-label">问题类型选择</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="type" class="weui-input" type="text" value="" readonly="" data-values="">
+            </div>
+        </div>
+        <!--时间选择-->
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label for="time" class="weui-label">时间选择</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="time" class="weui-input" type="text" value="" readonly="" data-values="">
+            </div>
+        </div>
+    </div>
+    <!--底部说明-->
+    <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__text">主办：成都市温江区统筹城乡和农村发展局</p>
+        <p class="weui-footer__text">承办：成都市温江区农村经济信息服务中心</p>
+    </div>
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery-weui.min.js"></script>
+    <script src="../../scripts/city-picker.min.js"></script>
+    <script src="../../scripts/swiper.min.js"></script>
+    <script>
+        $("#variety").select({
+            title: "作物品种",
+            multi: true,
+            min: 2,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "作物品种1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "作物品种2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "作物品种3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "作物品种4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "作物品种5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+
+        $("#type").select({
+            title: "问题类型",
+            multi: true,
+            min: 2,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "问题类型1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "问题类型2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "问题类型3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "问题类型4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "问题类型5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+    </script>
+</body>
+</html>
