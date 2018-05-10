@@ -58,3 +58,82 @@ button.weui-pwd-btn{
     }
   }
 }
+
+.my-question,
+.all-question {
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+/*我的问题列表*/
+.question-heading {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
+/*表格*/
+.question-list {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 1rem;
+  tr {
+    th,
+    td {
+      font-size: inherit;
+      color: inherit;
+      text-align: left;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      @extend %ellipsis;
+      &.status {
+        width: calc(4.5em + 1rem);
+      }
+      &.result {
+        width: calc(4.5em + 1rem);
+      }
+      &.summary {
+        width: 100%;
+      }
+    }
+  }
+  thead {
+    tr {
+      font-size: 14px;
+      height: 2.4em;
+      line-height: 2.4em;
+      background-color: #eaeaea;
+    }
+  }
+  tbody {
+    tr {
+      font-size: 13px;
+      height: 2.2em;
+      line-height: calc(2.2em - 1px);
+      border-bottom: 1px solid #eaeaea;
+      td {
+        position: relative;
+        &.unsatisfactory {
+          color: #f00;
+        }
+        button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          color: inherit;
+          border: 1px solid;
+          height: 1.6em;
+          line-height: calc(1.6em - 2px);
+          padding-right: .5em;
+          padding-left: .5em;
+          border-radius: 3px;
+          background-color: transparent;
+          &.unsatisfactory {
+            color: #f00;
+          }
+        }
+
+      }
+    }
+  }
+}

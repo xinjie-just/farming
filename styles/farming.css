@@ -45,7 +45,7 @@ fieldset {
   border: 0; }
 
 html {
-  font-size: 18px;
+  font-size: 16px;
   height: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
@@ -271,6 +271,12 @@ label {
   label:hover {
     opacity: .8; }
 
+.question-list tr th,
+.question-list tr td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
 /*validate错误提示*/
 label.error {
   color: #f00;
@@ -281,6 +287,17 @@ label.error {
   display: block;
   color: #f00;
   visibility: hidden; }
+
+/*===重置框架中原有的样式,添加一些必要的样式===*/
+.weui-cells {
+  font-size: 15px; }
+
+.weui-footer {
+  padding-top: .5rem;
+  padding-bottom: .5rem; }
+
+.weui-footer_fixed-bottom {
+  bottom: 0; }
 
 /*===登录===*/
 .weui-pwd-btn {
@@ -330,5 +347,68 @@ button.weui-pwd-btn {
       font-size: 16px;
       color: #1aad19;
       text-align: center; }
+
+.my-question,
+.all-question {
+  margin-top: .5rem;
+  margin-bottom: 1rem; }
+
+/*我的问题列表*/
+.question-heading {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1;
+  padding-top: .4rem;
+  padding-bottom: .4rem; }
+
+/*表格*/
+.question-list {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 1rem; }
+  .question-list tr th,
+  .question-list tr td {
+    font-size: inherit;
+    color: inherit;
+    text-align: left;
+    padding-right: .5rem;
+    padding-left: .5rem; }
+    .question-list tr th.status,
+    .question-list tr td.status {
+      width: calc(4.5em + 1rem); }
+    .question-list tr th.result,
+    .question-list tr td.result {
+      width: calc(4.5em + 1rem); }
+    .question-list tr th.summary,
+    .question-list tr td.summary {
+      width: 100%; }
+  .question-list thead tr {
+    font-size: 14px;
+    height: 2.4em;
+    line-height: 2.4em;
+    background-color: #eaeaea; }
+  .question-list tbody tr {
+    font-size: 13px;
+    height: 2.2em;
+    line-height: calc(2.2em - 1px);
+    border-bottom: 1px solid #eaeaea; }
+    .question-list tbody tr td {
+      position: relative; }
+      .question-list tbody tr td.unsatisfactory {
+        color: #f00; }
+      .question-list tbody tr td button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: inherit;
+        border: 1px solid;
+        height: 1.6em;
+        line-height: calc(1.6em - 2px);
+        padding-right: .5em;
+        padding-left: .5em;
+        border-radius: 3px;
+        background-color: transparent; }
+        .question-list tbody tr td button.unsatisfactory {
+          color: #f00; }
 
 /*# sourceMappingURL=farming.css.map */

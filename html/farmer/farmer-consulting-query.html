@@ -14,37 +14,128 @@
     <link rel="stylesheet" href="../../styles/farming.css">
 </head>
 <body>
-    <div class="weui-cells weui-cells_form">
-        <!--作物品种选择-->
-        <div class="weui-cell">
-            <div class="weui-cell__hd">
-                <label for="variety" class="weui-label">作物品种选择</label>
+    <div class="weui-body">
+        <!--我的问题-->
+        <div class="my-question">
+            <h2 class="question-heading">我的问题列表</h2>
+            <div class="weui-cells weui-cells_form">
+                <!--作物品种选择-->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label for="myVariety" class="weui-label">作物品种选择</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input id="myVariety" class="weui-input" type="text" placeholder="请选择作物品种" value="" readonly="" data-values="">
+                    </div>
+                </div>
+                <!--问题类型选择-->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label for="myType" class="weui-label">问题类型选择</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input id="myType" class="weui-input" type="text" placeholder="请选择问题类型" value="" readonly="" data-values="">
+                    </div>
+                </div>
+                <!--时间选择-->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">时间选择</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input id="myStartDate" type="text" placeholder="请选择开始时间" />
+                        至
+                        <input id="myEndDate" type="text" placeholder="请选择结束时间" />
+                    </div>
+                </div>
             </div>
-            <div class="weui-cell__bd">
-                <input id="variety" class="weui-input" type="text" value="" readonly="" data-values="">
-            </div>
+            <table class="question-list">
+                <thead>
+                <tr>
+                    <th class="summary">问题概要</th>
+                    <th class="status">问题状态</th>
+                    <th class="result">是否满意</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--当不满意时，给 td 添加 unsatisfactory 类-->
+                <tr>
+                    <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                    <td class="status">已受理</td>
+                    <td>
+                        <button id="mySelect1">选择</button> <!--使用不同的id-->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                    <td class="status">已受理</td>
+                    <td class="result unsatisfactory">不满意</td>
+                </tr>
+                <tr>
+                    <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                    <td class="status">已回复</td>
+                    <td class="result">满意</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <!--问题类型选择-->
-        <div class="weui-cell">
-            <div class="weui-cell__hd">
-                <label for="type" class="weui-label">问题类型选择</label>
+        <!--所有问题-->
+        <div class="all-question">
+            <h2 class="question-heading">所有问题列表</h2>
+            <div class="weui-cells weui-cells_form">
+                <!--作物品种选择-->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label for="allVariety" class="weui-label">作物品种选择</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input id="allVariety" class="weui-input" type="text" placeholder="请选择作物品种" value="" readonly="" data-values="">
+                    </div>
+                </div>
+                <!--问题类型选择-->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label for="allType" class="weui-label">问题类型选择</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input id="allType" class="weui-input" type="text" placeholder="请选择问题类型" value="" readonly="" data-values="">
+                    </div>
+                </div>
+                <!--时间选择-->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">时间选择</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input id="allStartDate" type="text" placeholder="请选择开始时间" />
+                        至
+                        <input id="allEndDate" type="text" placeholder="请选择结束时间" />
+                    </div>
+                </div>
             </div>
-            <div class="weui-cell__bd">
-                <input id="type" class="weui-input" type="text" value="" readonly="" data-values="">
-            </div>
-        </div>
-        <!--时间选择-->
-        <div class="weui-cell">
-            <div class="weui-cell__hd">
-                <label for="time" class="weui-label">时间选择</label>
-            </div>
-            <div class="weui-cell__bd">
-                <input id="time" class="weui-input" type="text" value="" readonly="" data-values="">
-            </div>
+            <table class="question-list">
+                <thead>
+                <tr>
+                    <th class="summary">问题概要</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--当不满意时，给 td 添加 unsatisfactory 类-->
+                <tr>
+                    <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                </tr>
+                <tr>
+                    <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                </tr>
+                <tr>
+                    <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <!--底部说明-->
-    <div class="weui-footer weui-footer_fixed-bottom">
+    <div class="weui-footer">
         <p class="weui-footer__text">主办：成都市温江区统筹城乡和农村发展局</p>
         <p class="weui-footer__text">承办：成都市温江区农村经济信息服务中心</p>
     </div>
@@ -54,7 +145,7 @@
     <script src="../../scripts/city-picker.min.js"></script>
     <script src="../../scripts/swiper.min.js"></script>
     <script>
-        $("#variety").select({
+        $("#myVariety").select({
             title: "作物品种",
             multi: true,
             min: 2,  // 最少选择数
@@ -94,7 +185,7 @@
             }
         });
 
-        $("#type").select({
+        $("#myType").select({
             title: "问题类型",
             multi: true,
             min: 2,  // 最少选择数
@@ -133,6 +224,113 @@
                 console.log('close')
             }
         });
+
+        $("#myStartDate").calendar();
+        $("#myEndDate").calendar();
+
+        /*
+         * 满意确认对话框
+         * 如果有多个选择按钮，请使用不同的id
+        */
+        $("#select1").on("click", function() {
+            $.modal({
+                title: "提示",
+                text: "您对专家问答的问题满意吗",
+                buttons: [
+                    { text: "满意",
+                      onClick: function(){ console.log("满意")}
+                    },
+                    { text: "不满意",
+                      onClick: function(){ console.log("不满意")}
+                    }
+                ]
+            });
+
+        });
+
+
+        $("#allVariety").select({
+            title: "作物品种",
+            multi: true,
+            min: 2,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "作物品种1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "作物品种2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "作物品种3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "作物品种4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "作物品种5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+
+        $("#allType").select({
+            title: "问题类型",
+            multi: true,
+            min: 2,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "问题类型1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "问题类型2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "问题类型3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "问题类型4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "问题类型5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+
+        $("#allStartDate").calendar();
+        $("#allEndDate").calendar();
     </script>
 </body>
 </html>
