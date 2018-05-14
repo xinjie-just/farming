@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>消息设置 | 专家后台</title>
+    <meta name="author" content="lixinjie">
+    <meta name="keywords" content="农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <meta name="description" content="温江农业局项目,微博动态,农业VR,农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <link rel="stylesheet" href="../../styles/iconfont.css">
+    <link rel="stylesheet" href="../../styles/weui.min.css">
+    <link rel="stylesheet" href="../../styles/jquery-weui.min.css">
+    <link rel="stylesheet" href="../../styles/farming.css">
+</head>
+<body>
+    <p class="weui-cells__title">实时推送默认24小时实时推送，可关闭设置推送时间段</p>
+    <div class="weui-cells weui-cells_form">
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">咨询短信消息实时推送</div>
+            <div class="weui-cell__ft">
+                <label for="switchCP" class="weui-switch-cp">
+                    <input id="switchCP" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">推送时间段设定</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="myStartTime" type="text" placeholder="请选择开始时间" value="06 : 00" />
+                至
+                <input id="myEndTime" type="text" placeholder="请选择结束时间" value="23 : 00" />
+            </div>
+        </div>
+    </div>
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery-weui.min.js"></script>
+    <script src="../../scripts/city-picker.min.js"></script>
+    <script src="../../scripts/swiper.min.js"></script>
+    <script>
+        $("#myStartTime").picker({    //开始时间初始化
+            title: "开始时间",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: (function () {
+                        var hours = [];
+                        for (var i=0; i<=23; i++) hours.push(i > 9 ? i : '0'+i);
+                        return hours;
+                    })()
+                },
+                {
+                    textAlign: 'center',
+                    values: [':']
+                },
+                {
+                    textAlign: 'center',
+                    values: (function () {
+                        var minutes = [];
+                        for (var i=0; i<=59; i++) minutes.push(i > 9 ? i : '0'+i);
+                        return minutes;
+                    })()
+                }
+            ],
+            onChange: function (picker, value, displayValues) {
+                console.log(value);
+            }
+        });
+
+        $("#myEndTime").picker({    //结束时间初始化
+            title: "结束时间",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: (function () {
+                        var hours = [];
+                        for (var i=0; i<=23; i++) hours.push(i > 9 ? i : '0'+i);
+                        return hours;
+                    })()
+                },
+                {
+                    textAlign: 'center',
+                    values: [':']
+                },
+                {
+                    textAlign: 'center',
+                    values: (function () {
+                        var minutes = [];
+                        for (var i=0; i<=59; i++) minutes.push(i > 9 ? i : '0'+i);
+                        return minutes;
+                    })()
+                }
+            ]
+        });
+
+    </script>
+</body>
+</html>

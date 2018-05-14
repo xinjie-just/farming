@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>个人中心</title>
+    <meta name="author" content="lixinjie">
+    <meta name="keywords" content="农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <meta name="description" content="温江农业局项目,微博动态,农业VR,农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <link rel="stylesheet" href="../../styles/iconfont.css">
+    <link rel="stylesheet" href="../../styles/weui.min.css">
+    <link rel="stylesheet" href="../../styles/jquery-weui.min.css">
+    <link rel="stylesheet" href="../../styles/farming.css">
+</head>
+<body>
+    <div class="weui-search-bar" id="searchBar">
+        <form class="weui-search-bar__form">
+            <div class="weui-search-bar__box">
+                <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="修改内容" required="">
+                <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+            </div>
+            <label class="weui-search-bar__label" id="searchText">
+                <span>修改内容</span>
+            </label>
+        </form>
+        <!--点击完成按钮后，可考虑返回上一页继续修改其它字段-->
+        <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">完成</a>
+    </div>
+
+    <!--底部说明-->
+    <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__text">主办：成都市温江区统筹城乡和农村发展局</p>
+        <p class="weui-footer__text">承办：成都市温江区农村经济信息服务中心</p>
+    </div>
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery-weui.min.js"></script>
+    <script src="../../scripts/city-picker.min.js"></script>
+    <script src="../../scripts/swiper.min.js"></script>
+</body>
+</html>
