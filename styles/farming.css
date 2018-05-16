@@ -253,6 +253,14 @@ ul {
   list-style-type: none; }
 
 /* ===关于浮动=== */
+.question-type-list:before {
+  content: "";
+  display: table; }
+.question-type-list:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 /*快捷样式*/
 figure {
   overflow: hidden; }
@@ -272,7 +280,8 @@ label {
     opacity: .8; }
 
 .question-list tr th,
-.question-list tr td {
+.question-list tr td, .expert-list tr th,
+.expert-list tr td, .question-type-list li {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
@@ -384,13 +393,13 @@ button.weui-pwd-btn {
       width: 100%; }
   .question-list thead tr {
     font-size: 14px;
-    height: 2.4em;
-    line-height: 2.4em;
+    height: 3em;
+    line-height: 3em;
     background-color: #eaeaea; }
   .question-list tbody tr {
     font-size: 13px;
-    height: 2.2em;
-    line-height: calc(2.2em - 1px);
+    height: 2.6em;
+    line-height: calc(2.6em - 1px);
     border-bottom: 1px solid #eaeaea; }
     .question-list tbody tr td {
       position: relative; }
@@ -402,13 +411,63 @@ button.weui-pwd-btn {
         transform: translateY(-50%);
         color: inherit;
         border: 1px solid;
-        height: 1.6em;
-        line-height: calc(1.6em - 2px);
+        height: 2em;
+        line-height: calc(2em - 2px);
         padding-right: .5em;
         padding-left: .5em;
         border-radius: 3px;
         background-color: transparent; }
         .question-list tbody tr td button.unsatisfactory {
           color: #f00; }
+
+/*专家列表*/
+.expert-heading {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1;
+  padding-top: .4rem;
+  padding-bottom: .4rem; }
+
+.expert-list {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: .5rem; }
+  .expert-list tr th,
+  .expert-list tr td {
+    font-size: inherit;
+    color: inherit;
+    text-align: left;
+    padding-right: .5rem;
+    padding-left: .5rem; }
+    .expert-list tr th.phone,
+    .expert-list tr td.phone {
+      width: 160px; }
+    .expert-list tr th.name,
+    .expert-list tr td.name {
+      width: 100%; }
+  .expert-list thead tr {
+    font-size: 14px;
+    height: 3em;
+    line-height: 3em;
+    background-color: #eaeaea; }
+  .expert-list tbody tr {
+    font-size: 13px;
+    height: 2.6em;
+    line-height: calc(2.6em - 1px);
+    border-bottom: 1px solid #eaeaea; }
+
+/*问题类型列表*/
+.question-type-list {
+  margin-top: .5rem; }
+  .question-type-list li {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-right: 1em;
+    padding-left: 1em;
+    font-size: 14px;
+    float: left;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    width: 50%; }
 
 /*# sourceMappingURL=farming.css.map */

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>咨询查询 | 管理员</title>
+    <meta name="author" content="lixinjie">
+    <meta name="keywords" content="农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <meta name="description" content="温江农业局项目,微博动态,农业VR,农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <link rel="stylesheet" href="../../styles/iconfont.css">
+    <link rel="stylesheet" href="../../styles/weui.min.css">
+    <link rel="stylesheet" href="../../styles/jquery-weui.min.css">
+    <link rel="stylesheet" href="../../styles/farming.css">
+</head>
+<body>
+    <!--所有问题-->
+    <div class="all-question">
+        <h2 class="question-heading">所有问题列表</h2>
+        <div class="weui-cells weui-cells_form">
+            <!--作物品种选择-->
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label for="variety" class="weui-label">作物品种选择</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input id="variety" class="weui-input" type="text" placeholder="请选择作物品种" value="" readonly="" data-values="">
+                </div>
+            </div>
+            <!--问题类型选择-->
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label for="type" class="weui-label">问题类型选择</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input id="type" class="weui-input" type="text" placeholder="请选择问题类型" value="" readonly="" data-values="">
+                </div>
+            </div>
+            <!--时间选择-->
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">时间选择</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input id="startDate" type="text" placeholder="请选择开始时间" />
+                    至
+                    <input id="endDate" type="text" placeholder="请选择结束时间" />
+                </div>
+            </div>
+            <!--农户查询-->
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label for="farm" class="weui-label">农户查询</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input id="farm" class="weui-input" type="text" placeholder="请输入农户姓名">
+                </div>
+            </div>
+            <!--提交-->
+            <div class="weui-btn-area">
+                <button class="weui-btn weui-btn_primary" id="submit">查询</button>
+            </div>
+        </div>
+        <table class="question-list">
+            <thead>
+            <tr>
+                <th class="summary">问题概要</th>
+                <th class="status">问题状态</th>
+                <th class="result">是否满意</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--当不满意时，给 td 添加 unsatisfactory 类-->
+            <tr>
+                <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                <td class="status">已受理</td>
+                <td>满意</td>
+            </tr>
+            <tr>
+                <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                <td class="status">已受理</td>
+                <td class="result unsatisfactory">不满意</td>
+            </tr>
+            <tr>
+                <td class="summary">永宁镇大蒜发生病害,永宁镇大蒜发生病害</td>
+                <td class="status">已回复</td>
+                <td class="result">满意</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery-weui.min.js"></script>
+    <script src="../../scripts/city-picker.min.js"></script>
+    <script src="../../scripts/swiper.min.js"></script>
+    <script>
+        $("#variety").select({
+            title: "作物品种",
+            multi: true,
+            min: 2,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "作物品种1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "作物品种2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "作物品种3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "作物品种4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "作物品种5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+
+        $("#type").select({
+            title: "问题类型",
+            multi: true,
+            min: 2,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "问题类型1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "问题类型2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "问题类型3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "问题类型4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "问题类型5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+
+        $("#startDate").calendar();
+        $("#endDate").calendar();
+    </script>
+</body>
+</html>

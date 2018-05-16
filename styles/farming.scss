@@ -100,16 +100,16 @@ button.weui-pwd-btn{
   thead {
     tr {
       font-size: 14px;
-      height: 2.4em;
-      line-height: 2.4em;
+      height: 3em;
+      line-height: 3em;
       background-color: #eaeaea;
     }
   }
   tbody {
     tr {
       font-size: 13px;
-      height: 2.2em;
-      line-height: calc(2.2em - 1px);
+      height: 2.6em;
+      line-height: calc(2.6em - 1px);
       border-bottom: 1px solid #eaeaea;
       td {
         position: relative;
@@ -122,8 +122,8 @@ button.weui-pwd-btn{
           transform: translateY(-50%);
           color: inherit;
           border: 1px solid;
-          height: 1.6em;
-          line-height: calc(1.6em - 2px);
+          height: 2em;
+          line-height: calc(2em - 2px);
           padding-right: .5em;
           padding-left: .5em;
           border-radius: 3px;
@@ -135,5 +135,70 @@ button.weui-pwd-btn{
 
       }
     }
+  }
+}
+
+/*专家列表*/
+.expert-heading {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
+.expert-list {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: .5rem;
+  tr {
+    th,
+    td {
+      font-size: inherit;
+      color: inherit;
+      text-align: left;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      @extend %ellipsis;
+      &.phone {
+        width: 160px;
+      }
+      &.name {
+        width: 100%;
+      }
+    }
+  }
+  thead {
+    tr {
+      font-size: 14px;
+      height: 3em;
+      line-height: 3em;
+      background-color: #eaeaea;
+    }
+  }
+  tbody {
+    tr {
+      font-size: 13px;
+      height: 2.6em;
+      line-height: calc(2.6em - 1px);
+      border-bottom: 1px solid #eaeaea;
+    }
+  }
+}
+
+/*问题类型列表*/
+.question-type-list {
+  margin-top: .5rem;
+  @extend %clearfix;
+  li {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-right: 1em;
+    padding-left: 1em;
+    font-size: 14px;
+    float: left;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    @extend %ellipsis;
+    width: 50%;
   }
 }
