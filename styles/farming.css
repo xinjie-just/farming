@@ -253,10 +253,10 @@ ul {
   list-style-type: none; }
 
 /* ===关于浮动=== */
-.question-type-list:before, .popup-gallery-container .popup-gallery:before {
+.forgetPwd-signUp:before, .question-type-list:before, .popup-gallery-container .popup-gallery:before {
   content: "";
   display: table; }
-.question-type-list:after, .popup-gallery-container .popup-gallery:after {
+.forgetPwd-signUp:after, .question-type-list:after, .popup-gallery-container .popup-gallery:after {
   content: "";
   display: table;
   clear: both; }
@@ -279,7 +279,7 @@ label {
   label:hover {
     opacity: .8; }
 
-.question-list tr th,
+.forgetPwd-signUp a, .question-list tr th,
 .question-list tr td, .expert-list tr th,
 .expert-list tr td, .question-type-list li {
   overflow: hidden;
@@ -299,7 +299,12 @@ label.error {
 
 /*===重置框架中原有的样式,添加一些必要的样式===*/
 .weui-cells {
-  font-size: 15px; }
+  font-size: 15px;
+  margin-top: 0;
+  padding-top: 1.17647059em; }
+
+.weui-cell__bd input {
+  width: 100%; }
 
 .weui-footer {
   padding-top: .5rem;
@@ -309,6 +314,61 @@ label.error {
   bottom: 0; }
 
 /*===登录===*/
+.connect {
+  display: block;
+  line-height: 1.47058824;
+  font-size: inherit;
+  color: inherit; }
+
+.forgetPwd-signUp {
+  margin: 1.17647059em 15px .3em;
+  font-size: 15px; }
+  .forgetPwd-signUp a {
+    display: block;
+    float: left;
+    width: 50%;
+    line-height: 1.6;
+    color: #1aad19; }
+    .forgetPwd-signUp a:nth-of-type(2n + 1) {
+      text-align: left; }
+    .forgetPwd-signUp a:nth-of-type(2n + 2) {
+      text-align: right; }
+
+.other-way {
+  position: fixed;
+  bottom: 4em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  padding: .5rem;
+  color: #999; }
+  .other-way p {
+    font-size: 12px;
+    color: #999;
+    position: relative; }
+    .other-way p:before, .other-way p:after {
+      content: "";
+      width: calc(50% - 44px);
+      height: 1px;
+      background-color: #999;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+    .other-way p:before {
+      left: 0; }
+    .other-way p:after {
+      right: 0; }
+  .other-way .weixin {
+    text-align: center;
+    border-radius: 50%; }
+  .other-way .weixin-link-btn {
+    display: inline-block;
+    font-size: 34px;
+    color: #1aad19;
+    padding: 8px 14px;
+    line-height: 1; }
+
 .weui-pwd-btn {
   display: inline-block;
   height: 45px;
@@ -359,7 +419,7 @@ button.weui-pwd-btn {
 
 .my-question,
 .all-question {
-  margin-top: .5rem;
+  padding-top: .5rem;
   margin-bottom: 1rem; }
 
 /*我的问题列表*/

@@ -4,7 +4,76 @@
 @import "reboot";
 
 /*===登录===*/
-
+// 开始时间和结束时间连接符
+.connect {
+  display: block;
+  line-height: 1.47058824;
+  font-size: inherit;
+  color: inherit;
+}
+//忘记密码，注册新账号
+.forgetPwd-signUp {
+  margin: 1.17647059em 15px .3em;
+  font-size: 15px;
+  @extend %clearfix;
+  a {
+    display: block;
+    float: left;
+    width: 50%;
+    line-height: 1.6;
+    @extend %ellipsis;
+    color: #1aad19;
+    &:nth-of-type(2n + 1) {
+      text-align: left;
+    }
+    &:nth-of-type(2n + 2) {
+      text-align: right;
+    }
+  }
+}
+// 其他登录方式
+.other-way {
+  position: fixed;
+  bottom: 4em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  padding: .5rem;
+  color: #999;
+  p {
+    font-size: 12px;
+    color: #999;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      width: calc(50% - 44px);
+      height: 1px;
+      background-color: #999;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:before {
+      left: 0;
+    }
+    &:after {
+      right: 0;
+    }
+  }
+  .weixin {
+    text-align: center;
+    border-radius: 50%;
+  }
+  .weixin-link-btn {
+    display: inline-block;
+    font-size: 34px;
+    color: #1aad19;
+    padding: 8px 14px;
+    line-height: 1;
+  }
+}
 
 .weui-pwd-btn{
   display:inline-block;
@@ -61,7 +130,7 @@ button.weui-pwd-btn{
 
 .my-question,
 .all-question {
-  margin-top: .5rem;
+  padding-top: .5rem;
   margin-bottom: 1rem;
 }
 /*我的问题列表*/

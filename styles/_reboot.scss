@@ -472,6 +472,14 @@ label.error {
 /*===重置框架中原有的样式,添加一些必要的样式===*/
 .weui-cells {
   font-size: 15px;
+  margin-top: 0;
+  padding-top: 1.17647059em;
+}
+
+.weui-cell__bd {
+input {
+  width: 100%;
+}
 }
 .weui-footer{
   padding-top: .5rem;
