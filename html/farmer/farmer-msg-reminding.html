@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>消息提醒 | 农户后台</title>
+    <meta name="author" content="lixinjie">
+    <meta name="keywords" content="农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <meta name="description" content="温江农业局项目,微博动态,农业VR,农事提醒,农事咨询,使用指导,专家匹配,消息设置">
+    <link rel="stylesheet" href="../../styles/iconfont.css">
+    <link rel="stylesheet" href="../../styles/weui.min.css">
+    <link rel="stylesheet" href="../../styles/jquery-weui.min.css">
+    <link rel="stylesheet" href="../../styles/farming.css">
+</head>
+<body>
+    <div class="weui-cells weui-cells_form">
+        <p class="weui-cells__title">选定作物品种和种植区域后再开启推送</p>
+        <!--作物品种选择-->
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label for="variety" class="weui-label">作物品种选择</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="variety" class="weui-input" type="text" placeholder="请选择作物品种" value="" readonly="" data-values="">
+            </div>
+        </div>
+        <!--种植区域选择-->
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label for="area" class="weui-label">种植区域选择</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="area" class="weui-input" type="text" placeholder="请选择区域选择" value="" readonly="" data-values="">
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells weui-cells_form">
+        <p class="weui-cells__title">微信消息推送</p>
+        <!--标准防治历推送-->
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">标准防治历推送</div>
+            <div class="weui-cell__ft">
+                <label for="wxNormCalendar" class="weui-switch-cp">
+                    <input id="wxNormCalendar" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
+
+        <!--个人防治历推送-->
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">个人防治历推送</div>
+            <div class="weui-cell__ft">
+                <label for="wxPersonalCalendar" class="weui-switch-cp">
+                    <input id="wxPersonalCalendar" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
+
+        <!--物联网预警告警推送-->
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">个人防治历推送</div>
+            <div class="weui-cell__ft">
+                <label for="wxEarlyWarning" class="weui-switch-cp">
+                    <input id="wxEarlyWarning" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-cells weui-cells_form">
+        <p class="weui-cells__title">短信消息推送</p>
+        <!--标准防治历推送-->
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">标准防治历推送</div>
+            <div class="weui-cell__ft">
+                <label for="noteNormCalendar" class="weui-switch-cp">
+                    <input id="noteNormCalendar" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
+
+        <!--个人防治历推送-->
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">个人防治历推送</div>
+            <div class="weui-cell__ft">
+                <label for="notePersonalCalendar" class="weui-switch-cp">
+                    <input id="notePersonalCalendar" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
+
+        <!--物联网预警告警推送-->
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">物联网预警告警推送</div>
+            <div class="weui-cell__ft">
+                <label for="noteEarlyWarning" class="weui-switch-cp">
+                    <input id="noteEarlyWarning" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery-weui.min.js"></script>
+    <script src="../../scripts/city-picker.min.js"></script>
+    <script src="../../scripts/swiper.min.js"></script>
+    <script>
+        $("#variety").select({
+            title: "作物品种",
+            multi: true,
+            min: 1,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "作物品种1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "作物品种2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "作物品种3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "作物品种4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "作物品种5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+
+        $("#area").select({
+            title: "种植区域",
+            multi: true,
+            min: 1,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "种植区域1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "种植区域2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "种植区域3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "种植区域4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "种植区域5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+    </script>
+</body>
+</html>
