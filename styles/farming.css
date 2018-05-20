@@ -253,10 +253,10 @@ ul {
   list-style-type: none; }
 
 /* ===关于浮动=== */
-.question-type-list:before {
+.question-type-list:before, .popup-gallery-container .popup-gallery:before {
   content: "";
   display: table; }
-.question-type-list:after {
+.question-type-list:after, .popup-gallery-container .popup-gallery:after {
   content: "";
   display: table;
   clear: both; }
@@ -469,5 +469,38 @@ button.weui-pwd-btn {
     margin-top: .5em;
     margin-bottom: .5em;
     width: 50%; }
+
+/*图片放大和图片上传*/
+.popup-gallery-container {
+  margin-top: .5rem;
+  padding: 10px 15px; }
+  .popup-gallery-container .heading {
+    font-size: 14px;
+    font-weight: normal;
+    color: #999;
+    margin-bottom: .3rem; }
+  .popup-gallery-container .popup-gallery a {
+    display: block;
+    float: left;
+    width: 75px;
+    height: 75px;
+    margin-bottom: 15px;
+    margin-right: 15px; }
+    .popup-gallery-container .popup-gallery a img {
+      display: block;
+      width: 100%;
+      height: 100%; }
+  .popup-gallery-container .popup-gallery .add-img-btn {
+    display: block;
+    width: 75px;
+    height: 75px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    font-size: 36px;
+    padding-left: 17px;
+    line-height: 75px;
+    border: 1px solid #ababab;
+    border-radius: 8px;
+    background-color: transparent; }
 
 /*# sourceMappingURL=farming.css.map */
