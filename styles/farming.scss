@@ -312,3 +312,13 @@ button.weui-pwd-btn{
     }
   }
 }
+
+/*统计分析*/
+.statistic {
+  > div {
+    margin: 15px auto 15px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

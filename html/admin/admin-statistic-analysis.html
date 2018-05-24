@@ -8,29 +8,87 @@
     <meta name="author" content="lixinjie">
     <meta name="keywords" content="农事提醒,农事咨询,使用指导,专家匹配,消息设置">
     <meta name="description" content="温江农业局项目,微博动态,农业VR,农事提醒,农事咨询,使用指导,专家匹配,消息设置">
-    <link rel="stylesheet" href="../../styles/iconfont.css">
-    <link rel="stylesheet" href="../../styles/weui.min.css">
-    <link rel="stylesheet" href="../../styles/jquery-weui.min.css">
     <link rel="stylesheet" href="../../styles/farming.css">
 </head>
 <body>
-    <div id="lot" class="baidu-echarts" style="width: 80%; min-width: 300px; height: 300px;"></div>
-    <div id="calendar" class="baidu-echarts" style="width: 80%; min-width: 300px; height: 300px;"></div>
-    <div id="faqs" class="baidu-echarts" style="width: 80%; min-width: 300px; height: 300px;"></div>
+    <div class="statistic">
+        <div id="lot" class="baidu-echarts" style="width: 80%; min-width: 300px; height: 300px;"></div>
+        <div id="calendar" class="baidu-echarts" style="width: 80%; min-width: 300px; height: 300px;"></div>
+        <div id="faqs" class="baidu-echarts" style="width: 80%; min-width: 300px; height: 300px;"></div>
+    </div>
 
-    <script src="../../scripts/jquery.min.js"></script>
     <script src="../../scripts/echarts.simple.min.js"></script>
-    <script src="../../scripts/jquery-weui.min.js"></script>
-    <script src="../../scripts/city-picker.min.js"></script>
-    <script src="../../scripts/swiper.min.js"></script>
     <script>
         // 基于准备好的dom，初始化echarts实例
-        var lot = echarts.init($("lot")),
-            calendar = echarts.init($("calendar")),
-            faqs = echarts.init($("faqs"));
+        var lot = echarts.init(document.getElementById('lot')),
+            calendar = echarts.init(document.getElementById('calendar')),
+            faqs = echarts.init(document.getElementById('faqs'));
+
+        // 物联网预警告警统计
+        var lotOption = {
+            title: {
+                text: '水果销售量'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['苹果','香蕉','橘子','草莓']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+                    data : ['第一季度','第二季度','第三季度','第四季度']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'苹果',
+                    type:'line',
+                    stack: '销量',
+                    data:[1270, 6382, 2091, 1034]
+                },
+                {
+                    name:'香蕉',
+                    type:'line',
+                    stack: '销量',
+                    data:[2270, 3456, 5432, 3423]
+                },
+                {
+                    name:'橘子',
+                    type:'line',
+                    stack: '销量',
+                    data:[2200, 2456, 5402, 423]
+                },
+                {
+                    name:'草莓',
+                    type:'line',
+                    stack: '销量',
+                    data:[2200, 2456, 5032, 3423]
+                }
+            ]
+        };
+        lot.setOption(lotOption);
 
         // 防治历推送统计(柱状图)
-        var option = {
+        var calendarOption = {
             title: {
                 text: '防治历推送统计'
             },
@@ -42,13 +100,53 @@
                 type: 'value'
             },
             series: [{
-                data: [120, 200, 150, 80, 70, 110, 130],
+                data: [120, 200, 150, 80],
                 type: 'bar'
             }]
         };
+        calendar.setOption(calendarOption);
 
-        // 使用刚指定的配置项和数据显示图表。
-        calendar.setOption(option);
+        // 提问和专家回复统计
+        var faqsOption = {
+            title : {
+                text: '某站点用户访问来源',
+                subtext: '纯属虚构',
+                x:'center',
+                show: true
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            },
+            series : [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius : '55%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:335, name:'直接访问'},
+                        {value:310, name:'邮件营销'},
+                        {value:234, name:'联盟广告'},
+                        {value:135, name:'视频广告'},
+                        {value:1548, name:'搜索引擎'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        faqs.setOption(faqsOption);
     </script>
 </body>
 </html>
