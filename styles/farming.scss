@@ -322,3 +322,32 @@ button.weui-pwd-btn{
     }
   }
 }
+
+/*首页未登录*/
+.handle-list {
+  @extend %clearfix;
+  a {
+    display: block;
+    float: left;
+    width: 33.33333333%;
+    font-size: 14px;
+    padding: 1em .5em;
+    color: $main-color;
+    text-align: center;
+    @extend %ellipsis;
+    i {
+      color: inherit;
+      font-size: 40px;
+      display: block;
+      &.icon-VRAR {
+        font-weight: 600;
+      }
+    }
+    strong {
+      font-size: inherit;
+      color: inherit;
+      font-weight: normal;
+    }
+
+  }
+}

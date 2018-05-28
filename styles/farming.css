@@ -253,10 +253,10 @@ ul {
   list-style-type: none; }
 
 /* ===关于浮动=== */
-.forgetPwd-signUp:before, .question-type-list:before, .popup-gallery-container .popup-gallery:before {
+.forgetPwd-signUp:before, .question-type-list:before, .popup-gallery-container .popup-gallery:before, .handle-list:before {
   content: "";
   display: table; }
-.forgetPwd-signUp:after, .question-type-list:after, .popup-gallery-container .popup-gallery:after {
+.forgetPwd-signUp:after, .question-type-list:after, .popup-gallery-container .popup-gallery:after, .handle-list:after {
   content: "";
   display: table;
   clear: both; }
@@ -281,7 +281,7 @@ label {
 
 .forgetPwd-signUp a, .question-list tr th,
 .question-list tr td, .expert-list tr th,
-.expert-list tr td, .question-type-list li {
+.expert-list tr td, .question-type-list li, .handle-list a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
@@ -568,5 +568,25 @@ button.weui-pwd-btn {
   margin: 15px auto 15px; }
   .statistic > div:last-of-type {
     margin-bottom: 0; }
+
+/*首页未登录*/
+.handle-list a {
+  display: block;
+  float: left;
+  width: 33.33333333%;
+  font-size: 14px;
+  padding: 1em .5em;
+  color: #1aad19;
+  text-align: center; }
+  .handle-list a i {
+    color: inherit;
+    font-size: 40px;
+    display: block; }
+    .handle-list a i.icon-VRAR {
+      font-weight: 600; }
+  .handle-list a strong {
+    font-size: inherit;
+    color: inherit;
+    font-weight: normal; }
 
 /*# sourceMappingURL=farming.css.map */
