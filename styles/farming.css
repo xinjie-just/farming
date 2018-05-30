@@ -281,7 +281,8 @@ label {
 
 .forgetPwd-signUp a, .question-list tr th,
 .question-list tr td, .expert-list tr th,
-.expert-list tr td, .question-type-list li, .handle-list a {
+.expert-list tr td, .question-type-list li, .handle-list a, .cultivate tr th,
+.cultivate tr td, .curing-condition > section .heading, .curing-condition > section .condition li strong {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
@@ -303,6 +304,9 @@ label.error {
   margin-top: 0;
   padding-top: 1.17647059em; }
 
+.weui-label {
+  width: 115px; }
+
 .weui-cell__bd input {
   width: 100%; }
 
@@ -312,6 +316,16 @@ label.error {
 
 .weui-footer_fixed-bottom {
   bottom: 0; }
+
+.weui-btn-area {
+  margin-top: 3em;
+  margin-bottom: 1em; }
+
+.weui-search-bar__cancel-btn {
+  font-size: 14px; }
+
+.mfp-container {
+  font-size: 14px; }
 
 /*===登录===*/
 .connect {
@@ -428,7 +442,7 @@ button.weui-pwd-btn {
   font-size: 1rem;
   line-height: 1;
   padding-top: .4rem;
-  padding-bottom: .4rem; }
+  padding-bottom: .8rem; }
 
 /*表格*/
 .question-list {
@@ -458,8 +472,8 @@ button.weui-pwd-btn {
     background-color: #eaeaea; }
   .question-list tbody tr {
     font-size: 13px;
-    height: 2.6em;
-    line-height: calc(2.6em - 1px);
+    height: 3em;
+    line-height: calc(3em - 1px);
     border-bottom: 1px solid #eaeaea; }
     .question-list tbody tr td {
       position: relative; }
@@ -471,10 +485,10 @@ button.weui-pwd-btn {
         transform: translateY(-50%);
         color: inherit;
         border: 1px solid;
-        height: 2em;
-        line-height: calc(2em - 2px);
-        padding-right: .5em;
-        padding-left: .5em;
+        height: 2.4em;
+        line-height: calc(2.4em - 2px);
+        padding-right: 1em;
+        padding-left: 1em;
         border-radius: 3px;
         background-color: transparent; }
         .question-list tbody tr td button.unsatisfactory {
@@ -485,7 +499,7 @@ button.weui-pwd-btn {
   text-align: center;
   font-size: 1rem;
   line-height: 1;
-  padding-top: .4rem;
+  padding-top: 1rem;
   padding-bottom: .4rem; }
 
 .expert-list {
@@ -515,6 +529,11 @@ button.weui-pwd-btn {
     height: 2.6em;
     line-height: calc(2.6em - 1px);
     border-bottom: 1px solid #eaeaea; }
+
+.expert-question-matching-list {
+  font-size: 14px; }
+  .expert-question-matching-list .weui-cell {
+    font-size: inherit; }
 
 /*问题类型列表*/
 .question-type-list {
@@ -569,24 +588,184 @@ button.weui-pwd-btn {
   .statistic > div:last-of-type {
     margin-bottom: 0; }
 
-/*首页未登录*/
-.handle-list a {
-  display: block;
-  float: left;
-  width: 33.33333333%;
+/*===首页未登录===*/
+/*天气*/
+.weather .today {
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+  background-image: linear-gradient(to bottom, #1a3056, #45658C); }
+  .weather .today > div {
+    text-align: center;
+    color: #fff; }
+  .weather .today .now-temperature {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 10px; }
+  .weather .today .condition {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 6px; }
+  .weather .today .highest-lowest {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 6px; }
+  .weather .today .quality {
+    font-size: 14px;
+    line-height: 1.6; }
+.weather .future li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  color: #fff;
+  background-image: linear-gradient(to right, #2b4b72, #496a93);
   font-size: 14px;
-  padding: 1em .5em;
-  color: #1aad19;
-  text-align: center; }
-  .handle-list a i {
+  line-height: 2.5; }
+  .weather .future li:not(:last-of-type) {
+    border-bottom: 1px solid #fff; }
+  .weather .future li > div {
+    flex: 1;
     color: inherit;
-    font-size: 40px;
-    display: block; }
-    .handle-list a i.icon-VRAR {
-      font-weight: 600; }
-  .handle-list a strong {
+    font-size: inherit; }
+    .weather .future li > div:first-of-type {
+      text-align: left; }
+    .weather .future li > div:nth-of-type(2) {
+      text-align: center; }
+    .weather .future li > div:last-of-type {
+      text-align: right; }
+    .weather .future li > div.iconfont {
+      font-size: 1.4em; }
+
+.handle-list {
+  font-size: 14px;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  .handle-list a {
+    display: block;
+    float: left;
+    width: 33.33333333%;
+    padding: 1em .5em;
+    font-size: inherit;
+    color: #1aad19;
+    text-align: center; }
+    .handle-list a i {
+      color: inherit;
+      font-size: 40px;
+      display: block; }
+      .handle-list a i.icon-VRAR {
+        font-weight: 600; }
+    .handle-list a strong {
+      font-size: inherit;
+      color: inherit;
+      font-weight: normal; }
+
+.weui-cell_select.variety,
+.weui-cell_select.monitoring-point {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px; }
+  .weui-cell_select.variety .iconfont,
+  .weui-cell_select.monitoring-point .iconfont {
+    font-size: 1.4em; }
+
+.cultivate {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: .5rem; }
+  .cultivate tr th,
+  .cultivate tr td {
     font-size: inherit;
     color: inherit;
-    font-weight: normal; }
+    text-align: left;
+    padding-right: .5rem;
+    padding-left: .5rem; }
+    .cultivate tr th.growth-period,
+    .cultivate tr td.growth-period {
+      width: 70px; }
+    .cultivate tr th.basic-operation,
+    .cultivate tr td.basic-operation {
+      width: 50%; }
+    .cultivate tr th.general-operation,
+    .cultivate tr td.general-operation {
+      width: 50%; }
+    .cultivate tr th.operation-time,
+    .cultivate tr td.operation-time {
+      width: 100px; }
+  .cultivate thead tr {
+    font-size: 14px;
+    height: 3em;
+    line-height: 3em;
+    background-color: #eaeaea; }
+  .cultivate tbody tr {
+    font-size: 13px;
+    height: 2.6em;
+    line-height: calc(2.6em - 1px);
+    border-bottom: 1px solid #eaeaea; }
+
+.curing-condition {
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+  .curing-condition > section {
+    position: relative;
+    padding: 50px 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+    .curing-condition > section .heading {
+      position: absolute;
+      top: 10px;
+      left: 1rem;
+      font-size: 14px;
+      font-weight: normal;
+      color: #fff;
+      line-height: 1.5em; }
+    .curing-condition > section:not(:last-of-type) {
+      border-bottom: 1px solid #fff; }
+    .curing-condition > section:nth-of-type(4n + 1) {
+      background-image: linear-gradient(to bottom, #1a3056, #45658C); }
+    .curing-condition > section:nth-of-type(4n + 2) {
+      background-image: linear-gradient(to top, #1a3056, #45658C); }
+    .curing-condition > section:nth-of-type(4n + 3) {
+      background-image: linear-gradient(to bottom, #193153, #45658C); }
+    .curing-condition > section:nth-of-type(4n + 4) {
+      background-image: linear-gradient(to top, #193153, #45658C); }
+    .curing-condition > section .iconfont {
+      width: 100px;
+      font-size: 60px; }
+      .curing-condition > section .iconfont.icon-guangzhao {
+        color: #f6c600; }
+      .curing-condition > section .iconfont.icon-turangshidu {
+        color: #6fb8f5; }
+      .curing-condition > section .iconfont.icon-wendu {
+        color: #f05537; }
+      .curing-condition > section .iconfont.icon-fengxiang {
+        color: #977142; }
+    .curing-condition > section .condition {
+      flex: 1;
+      flex-direction: row; }
+      .curing-condition > section .condition li {
+        font-size: 13px;
+        display: flex;
+        color: #fff;
+        line-height: 1.8; }
+        .curing-condition > section .condition li strong {
+          display: block;
+          font-size: inherit;
+          font-weight: normal;
+          width: 150px; }
+        .curing-condition > section .condition li span {
+          display: block;
+          font-size: inherit;
+          flex: 1; }
+          .curing-condition > section .condition li span.danger {
+            color: #f00; }
+          .curing-condition > section .condition li span.warning {
+            color: #cee032; }
+          .curing-condition > section .condition li span.normal {
+            color: #6ca94a; }
 
 /*# sourceMappingURL=farming.css.map */

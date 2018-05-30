@@ -13,6 +13,45 @@
     <link rel="stylesheet" href="styles/farming.css">
 </head>
 <body>
+    <!--天气-->
+    <div class="weather">
+        <div class="today">
+            <div class="now-temperature">20 &#8451;</div>
+            <div class="condition">多云</div>
+            <div class="highest-lowest">20 &#8451;/ 9 &#8451;</div>
+            <div class="quality">优</div>
+        </div>
+        <ul class="future">
+            <!--天气状况
+              --晴 icon-qing
+              --多云 icon-duoyun
+              --阴 icon-yin
+              --小雨 icon-xiaoyu
+              --大雨 icon-dayu
+            -->
+            <li>
+                <div class="date">4月16日星期一</div>
+                <div class="condition iconfont icon-qing"></div>
+                <div class="highest-lowest">20 &#8451;/ 9 &#8451;</div>
+            </li>
+            <li>
+                <div class="date">4月17日星期二</div>
+                <div class="condition iconfont icon-duoyun"></div>
+                <div class="highest-lowest">20 &#8451;/ 9 &#8451;</div>
+            </li>
+            <li>
+                <div class="date">4月18日星期三</div>
+                <div class="condition iconfont icon-yin"></div>
+                <div class="highest-lowest">20 &#8451;/ 9 &#8451;</div>
+            </li>
+            <li>
+                <div class="date">4月19日星期四</div>
+                <div class="condition iconfont icon-xiaoyu"></div>
+                <div class="highest-lowest">20 &#8451;/ 9 &#8451;</div>
+            </li>
+        </ul>
+    </div>
+
     <div class="handle-list">
         <a href="#" title="农事提醒">
             <i class="iconfont icon-tixing"></i>
@@ -40,30 +79,169 @@
         </a>
     </div>
 
-    <div class="weui-cell weui-cell_select">
+    <div class="weui-cell weui-cell_select variety">
         <div class="weui-cell__hd">
             <i class="iconfont icon-jiegou"></i>
         </div>
         <div class="weui-cell__bd">
             <select class="weui-select" name="select1">
-                <option value="-1">种植品种</option>
+                <option value="-1" style="display: none">种植品种</option>
                 <option value="0">温江大蒜</option>
                 <option value="1">水稻</option>
                 <option value="2">蔬菜</option>
             </select>
         </div>
     </div>
-    <div class="weui-cell weui-cell_select">
+    <div class="weui-cell weui-cell_select monitoring-point">
         <div class="weui-cell__hd">
             <i class="iconfont icon-dizhi"></i>
         </div>
         <div class="weui-cell__bd">
             <select class="weui-select" name="select1">
-                <option value="-1">监控点位</option>
+                <option value="-1" style="display: none">监控点位</option>
                 <option value="0">永宁片区</option>
                 <option value="1">万春片区</option>
             </select>
         </div>
+    </div>
+
+    <table class="cultivate">
+        <thead>
+        <tr>
+            <th class="growth-period">生育期</th>
+            <th class="basic-operation">基本操作</th>
+            <th class="general-operation">一般操作</th>
+            <th class="operation-time">操作时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="growth-period" rowspan="5">幼苗期</td>
+            <td class="basic-operation">基肥</td>
+            <td class="general-operation"></td>
+            <td class="operation-time">3.15-4.24</td>
+        </tr>
+        <tr>
+            <td class="basic-operation">分箱</td>
+            <td class="general-operation"></td>
+            <td class="operation-time">3.15-4.24</td>
+        </tr>
+        <tr>
+            <td class="basic-operation">浸种</td>
+            <td class="general-operation"></td>
+            <td class="operation-time">3.15-4.24</td>
+        </tr>
+        <tr>
+            <td class="basic-operation">催芽</td>
+            <td class="general-operation"></td>
+            <td class="operation-time">3.15-4.24</td>
+        </tr>
+        <tr>
+            <td class="basic-operation">播种</td>
+            <td class="general-operation"></td>
+            <td class="operation-time">3.15-4.24</td>
+        </tr>
+        <tr>
+            <td class="growth-period">返青期</td>
+            <td class="basic-operation">施肥</td>
+            <td class="general-operation"></td>
+            <td class="operation-time">4.24-5.1</td>
+        </tr>
+        <tr>
+            <td class="growth-period">分叶期</td>
+            <td class="basic-operation"></td>
+            <td class="general-operation">追肥</td>
+            <td class="operation-time">5.1-5.31</td>
+        </tr>
+        <tr>
+            <td class="growth-period">长穗期</td>
+            <td class="basic-operation">打药</td>
+            <td class="general-operation"></td>
+            <td class="operation-time">5.31-7.6</td>
+        </tr>
+        <tr>
+            <td class="growth-period">结实期</td>
+            <td class="basic-operation"></td>
+            <td class="general-operation"></td>
+            <td class="operation-time"></td>
+        </tr>
+        <tr>
+            <td class="growth-period">收获期</td>
+            <td class="basic-operation"></td>
+            <td class="general-operation"></td>
+            <td class="operation-time"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!--养护条件-->
+    <div class="curing-condition">
+        <!--对于不同的条件
+          --当限值分析为"警告时"添加 danger 类
+          --当限值分析为"预警时"添加 warning 类
+          --当限值分析为"适宜时"添加 normal 类
+          -->
+        <!--光照-->
+        <section class="illumination">
+            <h4 class="heading">光照</h4>
+            <div class="iconfont icon-guangzhao"></div>
+            <ul class="condition">
+                <li><strong>光照强度</strong><span>300LX</span></li>
+                <li><strong>适宜光照</strong><span>450-800LX</span></li>
+                <li><strong>限值分析</strong><span class="danger">警告</span></li>
+                <li><strong>建议操作</strong><span>打开补光灯</span></li>
+                <li><strong>月警告/预警统计</strong><span>3/1</span></li>
+            </ul>
+        </section>
+        <!--土壤-->
+        <section class="soil">
+            <h4 class="heading">土壤</h4>
+            <div class="iconfont icon-turangshidu"></div>
+            <ul class="condition">
+                <li><strong>土壤温度/湿度</strong><span>24 &#8451;/60%</span></li>
+                <li><strong>适宜温度</strong><span>25-38 &#8451;</span></li>
+                <li><strong>限值分析</strong><span class="danger">警告</span></li>
+                <li><strong>适宜温度</strong><span>30%-65%</span></li>
+                <li><strong>限值分析</strong><span class="warning">预警</span></li>
+                <li><strong>温度月告警/预警次数</strong><span>2/8</span></li>
+                <li><strong>湿度月告警/预警次数</strong><span>3/8</span></li>
+                <li><strong>建议操作</strong><span>防冻,防涝</span></li>
+            </ul>
+        </section>
+        <!--空气温湿度-->
+        <section class="air">
+            <h4 class="heading">空气温湿度</h4>
+            <div class="iconfont icon-wendu"></div>
+            <ul class="condition">
+                <li><strong>空气温湿度</strong><span>23 &#8451;/85%</span></li>
+                <li><strong>适宜温度</strong><span>25-38 &#8451;</span></li>
+                <li><strong>限值分析</strong><span class="danger">警告</span></li>
+                <li><strong>适宜温度</strong><span>30%-65%</span></li>
+                <li><strong>限值分析</strong><span class="warning">预警</span></li>
+                <li><strong>温度月告警/预警次数</strong><span>4/6</span></li>
+                <li><strong>湿度月告警/预警次数</strong><span>3/6</span></li>
+                <li><strong>建议操作</strong><span>防冻,防病</span></li>
+            </ul>
+        </section>
+        <!--风向风力-->
+        <section class="wind">
+            <h4 class="heading">风向风力</h4>
+            <div class="iconfont icon-fengxiang"></div>
+            <ul class="condition">
+                <li><strong>风向</strong><span>300LX</span></li>
+                <li><strong>风速</strong><span>450-800LX</span></li>
+                <li><strong>适宜风速</strong><span class="danger">警告</span></li>
+                <li><strong>限值分析</strong><span>打开补光灯</span></li>
+                <li><strong>风速月告警/预警统计</strong><span>3/1</span></li>
+                <li><strong>建议操作</strong><span>请时时关注预告</span></li>
+            </ul>
+        </section>
+    </div>
+
+    <!--底部说明-->
+    <div class="weui-footer">
+        <p class="weui-footer__text">主办：成都市温江区统筹城乡和农村发展局</p>
+        <p class="weui-footer__text">承办：成都市温江区农村经济信息服务中心</p>
     </div>
 
     <script src="scripts/jquery.min.js"></script>

@@ -139,7 +139,7 @@ button.weui-pwd-btn{
   font-size: 1rem;
   line-height: 1;
   padding-top: .4rem;
-  padding-bottom: .4rem;
+  padding-bottom: .8rem;
 }
 /*表格*/
 .question-list {
@@ -177,8 +177,8 @@ button.weui-pwd-btn{
   tbody {
     tr {
       font-size: 13px;
-      height: 2.6em;
-      line-height: calc(2.6em - 1px);
+      height: 3em;
+      line-height: calc(3em - 1px);
       border-bottom: 1px solid #eaeaea;
       td {
         position: relative;
@@ -191,10 +191,10 @@ button.weui-pwd-btn{
           transform: translateY(-50%);
           color: inherit;
           border: 1px solid;
-          height: 2em;
-          line-height: calc(2em - 2px);
-          padding-right: .5em;
-          padding-left: .5em;
+          height: 2.4em;
+          line-height: calc(2.4em - 2px);
+          padding-right: 1em;
+          padding-left: 1em;
           border-radius: 3px;
           background-color: transparent;
           &.unsatisfactory {
@@ -212,9 +212,10 @@ button.weui-pwd-btn{
   text-align: center;
   font-size: 1rem;
   line-height: 1;
-  padding-top: .4rem;
+  padding-top: 1rem;
   padding-bottom: .4rem;
 }
+
 .expert-list {
   table-layout: fixed;
   width: 100%;
@@ -251,6 +252,12 @@ button.weui-pwd-btn{
       line-height: calc(2.6em - 1px);
       border-bottom: 1px solid #eaeaea;
     }
+  }
+}
+.expert-question-matching-list {
+  font-size: 14px;
+  .weui-cell {
+    font-size: inherit;
   }
 }
 
@@ -323,15 +330,85 @@ button.weui-pwd-btn{
   }
 }
 
-/*首页未登录*/
+/*===首页未登录===*/
+/*天气*/
+.weather {
+  .today {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    background-image: linear-gradient(to bottom, #1a3056, #45658C);
+    > div {
+      text-align: center;
+      color: #fff;
+    }
+    .now-temperature {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .condition {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .highest-lowest {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .quality {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+  .future {
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      color: #fff;
+      background-image: linear-gradient(to right, #2b4b72, #496a93);
+      font-size: 14px;
+      line-height: 2.5;
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #fff;
+      }
+      > div {
+        flex: 1;
+        color: inherit;
+        font-size: inherit;
+        &:first-of-type {
+          text-align: left;
+        }
+        &:nth-of-type(2) {
+          text-align: center;
+        }
+        &:last-of-type {
+          text-align: right;
+        }
+        &.iconfont {
+          font-size: 1.4em;
+        }
+      }
+    }
+    
+  }
+}
 .handle-list {
+  font-size: 14px;
+  padding-top: 1em;
+  padding-bottom: 1em;
   @extend %clearfix;
   a {
     display: block;
     float: left;
     width: 33.33333333%;
-    font-size: 14px;
     padding: 1em .5em;
+    font-size: inherit;
     color: $main-color;
     text-align: center;
     @extend %ellipsis;
@@ -349,5 +426,142 @@ button.weui-pwd-btn{
       font-weight: normal;
     }
 
+  }
+}
+.weui-cell_select.variety,
+.weui-cell_select.monitoring-point{
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px;
+  .iconfont {
+    font-size: 1.4em;
+  }
+}
+.cultivate {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: .5rem;
+  tr {
+    th,
+    td {
+      font-size: inherit;
+      color: inherit;
+      text-align: left;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      @extend %ellipsis;
+      &.growth-period {
+        width: 70px;
+      }
+      &.basic-operation {
+        width: 50%;
+      }
+      &.general-operation {
+        width: 50%;
+      }
+      &.operation-time {
+        width: 100px;
+      }
+    }
+  }
+  thead {
+    tr {
+      font-size: 14px;
+      height: 3em;
+      line-height: 3em;
+      background-color: #eaeaea;
+    }
+  }
+  tbody {
+    tr {
+      font-size: 13px;
+      height: 2.6em;
+      line-height: calc(2.6em - 1px);
+      border-bottom: 1px solid #eaeaea;
+    }
+  }
+}
+.curing-condition {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  > section {
+    position: relative;
+    padding: 50px 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    .heading {
+      position: absolute;
+      top: 10px;
+      left: 1rem;
+      font-size: 14px;
+      font-weight: normal;
+      color: #fff;
+      line-height: 1.5em;
+      @extend %ellipsis;
+    }
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #fff;
+    }
+    &:nth-of-type(4n + 1) {
+      background-image: linear-gradient(to bottom, #1a3056, #45658C);
+    }
+    &:nth-of-type(4n + 2) {
+      background-image: linear-gradient(to top, #1a3056, #45658C);
+    }
+    &:nth-of-type(4n + 3) {
+      background-image: linear-gradient(to bottom, #193153, #45658C);
+    }
+    &:nth-of-type(4n + 4) {
+      background-image: linear-gradient(to top, #193153, #45658C);
+    }
+    .iconfont {
+      width: 100px;
+      font-size: 60px;
+      &.icon-guangzhao {
+        color: #f6c600;
+      }
+      &.icon-turangshidu {
+        color: #6fb8f5;
+      }
+      &.icon-wendu {
+        color: #f05537;
+      }
+      &.icon-fengxiang {
+        color: #977142;
+      }
+    }
+    .condition {
+      flex: 1;
+      flex-direction: row;
+      li {
+        font-size: 13px;
+        display: flex;
+        color: #fff;
+        line-height: 1.8;
+        strong {
+          display: block;
+          font-size: inherit;
+          font-weight: normal;
+          width: 150px;
+          @extend %ellipsis;
+        }
+        span {
+          display: block;
+          font-size: inherit;
+          flex: 1;
+          &.danger {
+            color: #f00;
+          }
+          &.warning {
+            color: #cee032;
+          }
+          &.normal {
+            color: #6ca94a;
+          }
+        }
+      }
+    }
   }
 }
