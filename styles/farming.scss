@@ -333,6 +333,7 @@ button.weui-pwd-btn{
 /*===首页未登录===*/
 /*天气*/
 .weather {
+  margin-bottom: 1rem;
   .today {
     padding-top: 1rem;
     padding-bottom: .5rem;
@@ -402,6 +403,8 @@ button.weui-pwd-btn{
   font-size: 14px;
   padding-top: 1em;
   padding-bottom: 1em;
+  margin-bottom: 1rem;
+  background-image: linear-gradient(to bottom, #1a3056, #45658C);
   @extend %clearfix;
   a {
     display: block;
@@ -409,7 +412,7 @@ button.weui-pwd-btn{
     width: 33.33333333%;
     padding: 1em .5em;
     font-size: inherit;
-    color: $main-color;
+    color: #fff;
     text-align: center;
     @extend %ellipsis;
     i {
@@ -433,14 +436,33 @@ button.weui-pwd-btn{
   padding-left: 15px;
   padding-right: 15px;
   font-size: 14px;
+  background-image: linear-gradient(to right, #2b4b72, #496a93);
+  color: #fff;
+  &::before {
+    border-top-width: 0;
+  }
   .iconfont {
     font-size: 1.4em;
+  }
+  .weui-select {
+    color: inherit;
+    option {
+      color: #999;
+      line-height: 1.5;
+    }
+  }
+}
+.weui-cell_select {
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #fff;
   }
 }
 .cultivate {
   table-layout: fixed;
   width: 100%;
   margin-top: .5rem;
+  background-image: linear-gradient(to bottom, #1a3056, #45658C);
+  color: #fff;
   tr {
     th,
     td {
@@ -470,6 +492,7 @@ button.weui-pwd-btn{
       height: 3em;
       line-height: 3em;
       background-color: #eaeaea;
+      background-image: linear-gradient(to bottom, #1a3056, #45658C);
     }
   }
   tbody {
