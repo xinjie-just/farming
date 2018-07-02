@@ -69,7 +69,7 @@
                 <label for="pesticide" class="weui-label">农药使用品种</label>
             </div>
             <div class="weui-cell__bd">
-                <input id="pesticide" class="weui-input" type="text" placeholder="请提供准确信息，方便诊断">
+                <input id="pesticide" class="weui-input" type="text" placeholder="请选择农药使用品种，方便诊断" value="" readonly="" data-values="">
             </div>
         </div>
         <!--肥料使用品种-->
@@ -91,5 +91,46 @@
     <script src="scripts/jquery-weui.min.js"></script>
     <script src="scripts/city-picker.min.js"></script>
     <script src="scripts/swiper.min.js"></script>
+    <script>    
+        $("#pesticide").select({
+            title: "作物品种",
+            multi: true,
+            min: 2,  // 最少选择数
+            max: 3,  // 最多选择数
+            items: [
+                {
+                    title: "作物品种1",
+                    value: 1,
+                    description: "额外的数据1"
+                },
+                {
+                    title: "作物品种2",
+                    value: 2,
+                    description: "额外的数据2"
+                },
+                {
+                    title: "作物品种3",
+                    value: 3,
+                    description: "额外的数据3"
+                },
+                {
+                    title: "作物品种4",
+                    value: 4,
+                    description: "额外的数据4"
+                },
+                {
+                    title: "作物品种5",
+                    value: 5,
+                    description: "额外的数据5"
+                }
+            ],
+            onChange: function(d) {
+                console.log(this, d);
+            },
+            onClose: function (d) {
+                console.log('close')
+            }
+        });
+    </script>
 </body>
 </html>
