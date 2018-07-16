@@ -35,12 +35,15 @@
 .other-way {
   position: fixed;
   bottom: 4em;
-  left: 0;
-  right: 0;
+  @extend %page-width;
   text-align: center;
   font-size: 14px;
   padding: .5rem;
   color: #999;
+  &.auto {
+    position: static;
+    margin-top: 2rem;
+  }
   p {
     font-size: 12px;
     color: #999;
@@ -333,7 +336,7 @@ button.weui-pwd-btn{
 /*===首页未登录===*/
 /*天气*/
 .weather {
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
   .today {
     padding-top: 1rem;
     padding-bottom: .5rem;
@@ -403,7 +406,7 @@ button.weui-pwd-btn{
   font-size: 14px;
   padding-top: 1em;
   padding-bottom: 1em;
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
   background-image: linear-gradient(to bottom, #1a3056, #45658C);
   @extend %clearfix;
   a {
@@ -433,6 +436,7 @@ button.weui-pwd-btn{
 }
 .weui-cell_select.variety,
 .weui-cell_select.monitoring-point{
+  margin-top: 5px;
   padding-left: 15px;
   padding-right: 15px;
   font-size: 14px;
@@ -460,7 +464,7 @@ button.weui-pwd-btn{
 .cultivate {
   table-layout: fixed;
   width: 100%;
-  margin-top: .5rem;
+  margin-top: 5px;
   background-image: linear-gradient(to bottom, #1a3056, #45658C);
   color: #fff;
   tr {
@@ -505,7 +509,7 @@ button.weui-pwd-btn{
   }
 }
 .curing-condition {
-  margin-top: 1rem;
+  margin-top: 5px;
   margin-bottom: 1rem;
   > section {
     position: relative;
@@ -585,6 +589,31 @@ button.weui-pwd-btn{
           }
         }
       }
+    }
+  }
+}
+
+/*统计分析搜索*/
+.statistic-analysis-search {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  select {
+    border: 1px solid rgb(169, 169, 169);
+    font-size: 14px;
+    flex: 1;
+    padding: 2px 0 2px 3px;
+    &:not(:last-of-type) {
+      margin-right: 3px;
+    }
+    max-width: calc(33.33333333% - 2px);
+    option {
+      font-size: 14px;
+      padding-left: 3px;
+      line-height: 1.2;
     }
   }
 }

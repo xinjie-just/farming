@@ -49,7 +49,7 @@
     </form>
 
     <!--其他登录方式-->
-    <div class="other-way">
+    <div class="other-way auto">
         <p class="heading">其它登录方式</p>
         <div class="weixin">
             <a href="" class="iconfont icon-weixin weixin-link-btn" title="使用微信登录"></a>
@@ -57,7 +57,7 @@
     </div>
 
     <!--底部说明-->
-    <div class="weui-footer weui-footer_fixed-bottom">
+    <div class="weui-footer">
         <p class="weui-footer__text">主办：成都市温江区统筹城乡和农村发展局</p>
         <p class="weui-footer__text">承办：成都市温江区农村经济信息服务中心</p>
     </div>
@@ -66,29 +66,5 @@
     <script src="scripts/jquery-weui.min.js"></script>
     <script src="scripts/city-picker.min.js"></script>
     <script src="scripts/swiper.min.js"></script>
-    <script>
-        $("#phone, #pwd").on("focus", function(){
-            $(".other-way, .weui-footer").css("position", "static");
-            }).on("blur",function(){
-            $(".other-way, .weui-footer").css("position", "fixed");
-        });
-        // 判断屏幕是否旋转
-        $(window).on("onorientationchange", function(){
-            switch(window.orientation) {
-                case 0:
-                    $(".other-way, .weui-footer").css("position", "fixed");
-                    break;
-                case -90:
-                    $(".other-way, .weui-footer").css("position", "static");
-                    break;
-                case 90:
-                    $(".other-way, .weui-footer").css("position", "static");
-                    break;
-                case 180:
-                    $(".other-way, .weui-footer").css("position", "fixed");
-                    break;
-            }
-        });
-    </script>
 </body>
 </html>

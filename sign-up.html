@@ -54,6 +54,19 @@
             </div>
         </div>
 
+        <!-- 图片验证码 -->
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label for="imgCode" class="weui-label">图片验证码</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="imgCode" name="imgCode" class="weui-input" placeholder="请输入图片验证码">
+            </div>
+            <div class="weui-cell__ft">
+                <img src="images/validateCodeServlet.jpg" alt="图片验证码" class="get-img-code" id="codeimg" onclick="this.src='servlet/validateCodeServlet?d='+Math.random();">
+            </div>
+        </div>
+
         <!--手机号码-->
         <div class="weui-cell weui-cell_vcode">
             <div class="weui-cell__hd">
@@ -64,6 +77,16 @@
             </div>
             <div class="weui-cell__ft">
                 <button id="vcodeBtn" class="weui-vcode-btn">获取验证码</button>
+            </div>
+        </div>
+
+        <!-- 短信验证码 -->
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label for="smsCode" class="weui-label">短信验证码</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="smsCode" name="smsCode" class="weui-input" placeholder="请输入短信验证码">
             </div>
         </div>
 
@@ -79,13 +102,13 @@
                 <input id="pwd" name="pwd" class="weui-input" type="password" placeholder="请输入密码">
             </div>
             <div class="weui-cell__ft">
-                <button id="pwdBtn" class="weui-pwd-btn iconfont icon-mimayincang"></button>
+                <button type="button" id="pwdBtn" class="weui-pwd-btn iconfont icon-mimayincang"></button>
             </div>
         </div>
 
         <!--注册-->
         <div class="weui-btn-area">
-            <button id="signUpBtn" class="weui-btn weui-btn_primary">注册</button>
+            <button type="submit" id="signUpBtn" class="weui-btn weui-btn_primary">注册</button>
         </div>
     </form>
 
@@ -99,5 +122,16 @@
     <script src="scripts/jquery-weui.min.js"></script>
     <script src="scripts/city-picker.min.js"></script>
     <script src="scripts/swiper.min.js"></script>
+    <script>
+        $("#pwdBtn").on("click", function(){
+            if($(this).hasClass("icon-mimayincang")) {
+                $(this).removeClass("icon-mimayincang").addClass("icon-xianshimima");
+                $("#pwd").attr("type", "text");
+            } else {
+                $(this).addClass("icon-mimayincang").removeClass("icon-xianshimima");
+                $("#pwd").attr("type", "password");
+            }
+        });
+    </script>
 </body>
 </html>

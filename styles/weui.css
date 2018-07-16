@@ -1592,7 +1592,7 @@ a.weui-media-box:active{
   color:#586C94;
 }
 .weui-footer_fixed-bottom{
-  position:fixed;
+  position: fixed;
   bottom:.52em;
   left:0;
   right:0;

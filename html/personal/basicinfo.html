@@ -76,13 +76,13 @@
                 <input id="pwd" name="pwd" class="weui-input" type="password" placeholder="请输入密码">
             </div>
             <div class="weui-cell__ft">
-                <button id="pwdBtn" class="weui-pwd-btn iconfont icon-mimayincang"></button>
+                <button type="button" id="pwdBtn" class="weui-pwd-btn iconfont icon-mimayincang"></button>
             </div>
         </div>
 
         <!--注册-->
         <div class="weui-btn-area">
-            <button id="signUpBtn" class="weui-btn weui-btn_primary">注册</button>
+            <button type="submint" id="signUpBtn" class="weui-btn weui-btn_primary">注册</button>
         </div>
     </form>
 
@@ -96,5 +96,16 @@
     <script src="../../scripts/jquery-weui.min.js"></script>
     <script src="../../scripts/city-picker.min.js"></script>
     <script src="../../scripts/swiper.min.js"></script>
+    <script>
+        $("#pwdBtn").on("click", function(){
+            if($(this).hasClass("icon-mimayincang")) {
+                $(this).removeClass("icon-mimayincang").addClass("icon-xianshimima");
+                $("#pwd").attr("type", "text");
+            } else {
+                $(this).addClass("icon-mimayincang").removeClass("icon-xianshimima");
+                $("#pwd").attr("type", "password");
+            }
+        });
+    </script>
 </body>
 </html>
