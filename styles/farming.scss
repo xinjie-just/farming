@@ -476,7 +476,7 @@ button.weui-pwd-btn{
       line-height: calc(1.6em - 1px);
       padding: .5em .3rem;
       &.growth-period {
-        width: 70px;
+        width: 64px;
       }
       &.basic-operation {
         width: 50%;
@@ -509,16 +509,16 @@ button.weui-pwd-btn{
   margin-top: 5px;
   margin-bottom: 1rem;
   > section {
+    $pt: 50px;
+    $pb: .6rem;
+    $iconSize: 80px;
     position: relative;
-    padding: 50px 1rem 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    padding: $pt $pb $pb;
+    min-height: calc(#{$iconSize} + #{$pt});
     .heading {
       position: absolute;
       top: 10px;
-      left: 1rem;
+      left: $pb;
       font-size: 14px;
       font-weight: normal;
       color: #fff;
@@ -541,7 +541,15 @@ button.weui-pwd-btn{
       background-image: linear-gradient(to top, #193153, #45658C);
     }
     .iconfont {
-      width: 100px;
+      position: absolute;
+      top: calc(50% + #{$pt} / 2 - #{$pb} / 2);
+      left: 0;
+      transform: translateY(-50%);
+      height: $iconSize;
+      line-height: $iconSize;
+      display: block;
+      width: $iconSize;
+      text-align: center;
       font-size: 60px;
       &.icon-guangzhao {
         color: #f6c600;
@@ -557,8 +565,7 @@ button.weui-pwd-btn{
       }
     }
     .condition {
-      flex: 1;
-      flex-direction: row;
+      margin-left: calc(#{$iconSize} - #{$pb});
       li {
         font-size: 13px;
         display: flex;
@@ -568,6 +575,7 @@ button.weui-pwd-btn{
           display: block;
           font-size: inherit;
           font-weight: normal;
+          padding-right: $pb;
           width: 150px;
           @extend %ellipsis;
         }
@@ -575,6 +583,7 @@ button.weui-pwd-btn{
           display: block;
           font-size: inherit;
           flex: 1;
+          @extend %ellipsis;
           &.danger {
             color: #f00;
           }

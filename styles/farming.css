@@ -281,7 +281,7 @@ label {
 
 .forgetPwd-signUp a, .question-list tr th,
 .question-list tr td, .expert-list tr th,
-.expert-list tr td, .question-type-list li, .handle-list a, .curing-condition > section .heading, .curing-condition > section .condition li strong {
+.expert-list tr td, .question-type-list li, .handle-list a, .curing-condition > section .heading, .curing-condition > section .condition li strong, .curing-condition > section .condition li span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
@@ -706,7 +706,7 @@ button.weui-pwd-btn {
     padding: .5em .3rem; }
     .cultivate tr th.growth-period,
     .cultivate tr td.growth-period {
-      width: 70px; }
+      width: 64px; }
     .cultivate tr th.basic-operation,
     .cultivate tr td.basic-operation {
       width: 50%; }
@@ -731,15 +731,12 @@ button.weui-pwd-btn {
   margin-bottom: 1rem; }
   .curing-condition > section {
     position: relative;
-    padding: 50px 1rem 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center; }
+    padding: 50px 0.6rem 0.6rem;
+    min-height: calc(80px + 50px); }
     .curing-condition > section .heading {
       position: absolute;
       top: 10px;
-      left: 1rem;
+      left: 0.6rem;
       font-size: 14px;
       font-weight: normal;
       color: #fff;
@@ -755,7 +752,15 @@ button.weui-pwd-btn {
     .curing-condition > section:nth-of-type(4n + 4) {
       background-image: linear-gradient(to top, #193153, #45658C); }
     .curing-condition > section .iconfont {
-      width: 100px;
+      position: absolute;
+      top: calc(50% + 50px / 2 - 0.6rem / 2);
+      left: 0;
+      transform: translateY(-50%);
+      height: 80px;
+      line-height: 80px;
+      display: block;
+      width: 80px;
+      text-align: center;
       font-size: 60px; }
       .curing-condition > section .iconfont.icon-guangzhao {
         color: #f6c600; }
@@ -766,8 +771,7 @@ button.weui-pwd-btn {
       .curing-condition > section .iconfont.icon-fengxiang {
         color: #977142; }
     .curing-condition > section .condition {
-      flex: 1;
-      flex-direction: row; }
+      margin-left: calc(80px - 0.6rem); }
       .curing-condition > section .condition li {
         font-size: 13px;
         display: flex;
@@ -777,6 +781,7 @@ button.weui-pwd-btn {
           display: block;
           font-size: inherit;
           font-weight: normal;
+          padding-right: 0.6rem;
           width: 150px; }
         .curing-condition > section .condition li span {
           display: block;
